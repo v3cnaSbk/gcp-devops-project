@@ -6,15 +6,15 @@ steps:
   #- 'DOCKER_API_VERSION=1.41'
 # Push the image to the repository
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/$PROJECT_ID/astute-winter-257006']
+  args: ['push','gcr.io/$PROJECT_ID/gcp-cloud-devops']
 # Deploy the image to the GKE Cluster
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=gke.yaml
-  - --image=gcr.io/$PROJECT_ID/astute-winter-257006
+  - --image='gcr.io/$PROJECT_ID/gcp-cloud-devops
   - --location=us-central1-a
   - --cluster=gcp-devops-gke
-  - --namespace=gcp-devops-prod
+  - --namespace=gcp-devops-uat
 options:
   logging: CLOUD_LOGGING_ONLY
