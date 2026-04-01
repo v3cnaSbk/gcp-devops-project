@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gcp-devops-gke
-        image: gcr.io/astute-winter-257006/astute-winter-257006:latest
+        image: gcr.io/astute-winter-257006/astute-winter-257006-dev:latest
         ports:
         - containerPort: 5000
         env:
