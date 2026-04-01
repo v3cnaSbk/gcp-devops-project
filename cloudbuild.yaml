@@ -2,8 +2,8 @@ steps:
 # build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build','-t','gcr.io/$PROJECT_ID/astute-winter-257006','.']
-  env:
-  - 'DOCKER_API_VERSION=1.41'
+  #env:
+  #- 'DOCKER_API_VERSION=1.41'
 # Push the image to the repository
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','gcr.io/$PROJECT_ID/astute-winter-257006']
@@ -16,5 +16,5 @@ steps:
   - --location=us-central1-a
   - --cluster=gcp-devops-gke
   - --namespace=gcp-devops-prod
-options:
-  logging: CLOUD_LOGGING_ONLY
+# options:
+#  logging: CLOUD_LOGGING_ONLY
